@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectListe
         FragmentManager fragmentManager = getSupportFragmentManager();
         this.primaryFragment=fragmentManager.findFragmentById(R.id.frame_layout);
         this.secondaryFragment=fragmentManager.findFragmentById(R.id.frame_layout2);
-        if(!(this.primaryFragment instanceof ListFragment)) {
+        if(this.primaryFragment==null) {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             ListFragment fragment = new ListFragment();
             fragmentTransaction.replace(R.id.frame_layout, fragment);
